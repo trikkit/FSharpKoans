@@ -65,7 +65,7 @@ module ``about let`` =
 
     [<Koan>]
     let ModifyingTheValueOfVariables() =
-        let mutable x = 100 // NEW
+        let mutable x = 100
         x <- 200
 
         AssertEquality x 200

@@ -30,6 +30,6 @@ module ``about the order of evaluation`` =
         let double x =
             x * 2
 
-        let result = double <| add 5 8  //NEW
+        let result = double <| add 5 8
 
         AssertEquality result 26

@@ -16,7 +16,7 @@ module ``about unit`` =
     let UnitIsUsedWhenThereIsNoReturnValueForAFunction() =
         let sendData data =
             //...sending the data to the server...
-            () //NEW
+            ()
 
         let x = sendData "data"
         AssertEquality x () //Don't overthink this. Note also the value "()" displays as "null" in some cases.
@@ -26,5 +26,5 @@ module ``about unit`` =
         let sayHello() =
             "hello"
 
-        let result = sayHello() //NEW
+        let result = sayHello()
         AssertEquality result "hello"

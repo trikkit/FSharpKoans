@@ -57,9 +57,23 @@ module ``about the stock example`` =
     // Feel free to add extra [<Koan>] members here to write
     // tests for yourself along the way. You can also try 
     // using the F# Interactive window to check your progress.
-
+    
     [<Koan>]
     let YouGotTheAnswerCorrect() =
-        let result =  __
+        let splitCommas (x:string) =
+            x.Split([|','|])
+
+        let getDiff (openVal:float, closeVal:float) =
+            abs (openVal - closeVal)
+
+        let maxDifferenceRow = 
+            stockData.Tail
+            |> List.map splitCommas
+            |> List.maxBy (fun row -> 
+                getDiff (System.Double.Parse row.[1], System.Double.Parse row.[4]))
+
+        let result = maxDifferenceRow.[0]
         
         AssertEquality "2012-03-13" result
+
+    
